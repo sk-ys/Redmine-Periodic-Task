@@ -23,7 +23,7 @@ unless ApplicationController.include? RedminePeriodictask::WebSchedulerControlle
   ApplicationController.prepend RedminePeriodictask::WebSchedulerControllerPatch
 end
 Issue.include RedminePeriodictask::IssuePatch unless Issue.included_modules.include? RedminePeriodictask::IssuePatch
-IssueQuery.prepend RedminePeriodictask::IssueQueryPatch unless IssueQuery.include? RedminePeriodictask::IssueQueryPatch
+IssueQuery.include RedminePeriodictask::IssueQueryPatch unless IssueQuery.include? RedminePeriodictask::IssueQueryPatch
 unless QueriesHelper.include? RedminePeriodictask::QueriesHelperPatch
   QueriesHelper.prepend RedminePeriodictask::QueriesHelperPatch
 end
